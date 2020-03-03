@@ -2,7 +2,6 @@
 .globl  start, _start
 start:
 _start:
-        //movl 2f422f312f382f302f332f302f392f362f36, 0xB8000
         movl $0x2f652f68, 0xB8000   //he
         movl $0x2f6c2f6c, 0xB8004   //ll
         movl $0x2f772f6f, 0xB8008   //ow
@@ -20,10 +19,10 @@ _start:
         movl $0x2f6e2f61, 0xB8038   //an
         movl $0x2f67, 0xB803c   //g
         .align  4
-multiboot_header:
+multiboot_header:         //multiboot协议
         .long   0x1BADB002
         .long   0x00000001
         .long   -(0x1BADB002 + 0x00000001)
-loop:   hlt
+loop:   hlt         //循环防止运行结果闪烁
     jmp loop
      
