@@ -7,6 +7,6 @@
     "\\myOS\\i386",
     "\\myOS\\printk"
   ],
-  "SelectedNode": "\\myOS\\myOS.ld",
+  "SelectedNode": "\\myOS\\printk\\vsprintf.c",
   "PreviewInSolutionExplorer": false
 }
