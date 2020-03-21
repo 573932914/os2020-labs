@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\multibootheader",
+    "\\myOS",
+    "\\myOS\\dev",
+    "\\myOS\\i386",
+    "\\myOS\\printk"
+  ],
+  "SelectedNode": "\\myOS\\myOS.ld",
+  "PreviewInSolutionExplorer": false
+}
