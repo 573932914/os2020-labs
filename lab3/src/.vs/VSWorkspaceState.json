@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\multibootheader",
+    "\\myOS",
+    "\\myOS\\dev",
+    "\\myOS\\i386",
+    "\\myOS\\kernel",
+    "\\myOS\\lib",
+    "\\myOS\\printk",
+    "\\userApp"
+  ],
+  "SelectedNode": "\\userApp\\shell.c",
+  "PreviewInSolutionExplorer": false
+}

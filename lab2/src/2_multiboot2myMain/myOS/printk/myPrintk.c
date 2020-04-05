@@ -4,7 +4,8 @@ extern void append2screen(char *str,int color);
 extern void uart_put_chars(char* str);
 
 char uBuf[400];  //TODO: fix me
-int myPrintf(int color,const char *format, ...){
+int myPrintf(int color,const char *format, ...)
+{
 	va_list args;
 	int i;
 	va_start(args, format);

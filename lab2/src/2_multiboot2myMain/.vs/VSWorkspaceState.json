@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\multibootheader",
     "\\myOS",
-    "\\myOS\\dev",
-    "\\myOS\\i386",
     "\\myOS\\printk"
   ],
-  "SelectedNode": "\\myOS\\printk\\vsprintf.c",
+  "SelectedNode": "\\myOS\\printk\\myPrintk.c",
   "PreviewInSolutionExplorer": false
 }
