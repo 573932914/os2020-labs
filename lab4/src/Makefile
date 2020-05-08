@@ -1,9 +1,9 @@
-SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/Computer Program/os2020-labs/lab3/src
+SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/Computer_Program/os2020-labs/lab4/src
 #SRC_RT=$(shell pwd)
 
 CROSS_COMPILE=
 ASM_FLAGS= -m32 --pipe -Wall -fasm -g -O1 -fno-stack-protector	
-C_FLAGS =  -m32 -fno-stack-protector -g
+C_FLAGS =  -m32 -fno-stack-protector -fno-builtin-free -g
 
 .PHONY: all
 all: output/myOS.elf

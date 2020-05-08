@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\doc",
+    "\\src",
+    "\\src\\myOS",
+    "\\src\\myOS\\dev",
+    "\\src\\myOS\\kernel",
+    "\\src\\myOS\\lib"
+  ],
+  "SelectedNode": "\\src\\source2img.sh",
+  "PreviewInSolutionExplorer": false
+}
