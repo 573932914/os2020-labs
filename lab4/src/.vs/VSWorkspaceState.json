@@ -11,6 +11,6 @@
     "\\myOS\\printk",
     "\\userApp"
   ],
-  "SelectedNode": "\\myOS\\userInterface.h",
+  "SelectedNode": "\\myOS\\dev\\i8253.c",
   "PreviewInSolutionExplorer": false
 }

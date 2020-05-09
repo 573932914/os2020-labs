@@ -6,11 +6,11 @@
 #include "include/mem.h"
 #include "include/myPrintk.h"
 
-extern void myMain(void);        //TODO: to be generalized
+extern void myMain(void);
 
 void pressAnyKeyToStart(void){
-    myPrintk(0x5,"Prepare uart device\n");
-    myPrintk(0x5,"Then, press any key to start ...\n");
+    myPrintk(PURPLE,"Prepare uart device\n");
+    myPrintk(PURPLE,"Then, press any key to start ...\n");
 
     uart_get_char();
 }
@@ -34,8 +34,8 @@ void osStart(void){
 
     // finished kernel init
     // NOW, run userApp
-    myPrintk(0x2,"START RUNNING......\n");    
+    myPrintk(DARK_GREEN,"START RUNNING......\n");    
     myMain();
-    myPrintk(0x2, "STOP RUNNING......ShutDown\n");
+    myPrintk(DARK_GREEN, "STOP RUNNING......ShutDown\n");
     while(1);
 }

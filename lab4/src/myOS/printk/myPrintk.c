@@ -8,7 +8,7 @@
 //extern void getTimeStamp(unsigned char *buffer);
 //char timestamp[20];
 
-char buf[400];  //TODO: fix me
+char buf[400];
 int myPrintk(int color,const char *format, ...){
     va_list args;
     int n;
@@ -27,7 +27,7 @@ int myPrintk(int color,const char *format, ...){
     return n; 
 }
 
-char user_buf[400];  //TODO: fix me
+char user_buf[400];
 int myPrintf(int color,const char *format, ...){
     va_list args;
     int n;

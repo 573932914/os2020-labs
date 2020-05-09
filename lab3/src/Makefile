@@ -1,4 +1,4 @@
-SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/Computer Program/os2020-labs/lab3/src
+SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/Computer_Program/os2020-labs/lab3/src
 #SRC_RT=$(shell pwd)
 
 CROSS_COMPILE=

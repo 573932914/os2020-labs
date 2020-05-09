@@ -1,0 +1,4 @@
+cd /mnt/d/360MoveData/Users/asus/Desktop/Computer_Program/os2020-labs/lab
+$ qemu-system-i386 -kernel output/myOS.elf  -serial pty&
+$ export DISPLAY=:0
+$ sudo screen /dev/pts/0

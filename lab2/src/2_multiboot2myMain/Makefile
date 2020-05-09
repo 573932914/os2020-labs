@@ -1,4 +1,4 @@
-SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/os2020-labs/lab2/src/2_multiboot2myMain/
+SRC_RT=/mnt/d/360MoveData/Users/asus/Desktop/Computer_Program/os2020-labs/lab2/src2_multiboot2myMain/
 
 CROSS_COMPILE=
 ASM_FLAGS= -m32 --pipe -Wall -fasm -g -O1 -fno-stack-protector	

@@ -153,7 +153,6 @@ void initShell(void)
 {
 	addNewCmd("cmd\0", listCmds, NULL, "list all registered commands\0");
 	addNewCmd("help\0", help, help_help, "help [cmd]\0");
-	//TODO: may be we can add a new command exit or quit
 }
 
 unsigned char cmdline[100];
@@ -162,13 +161,13 @@ void startShell(void)
 	unsigned char* argv[10];  //max 10
 	int argc;
 	Cmd* tmpCmd;
-	//myPrintf(0x7,"StartShell:\n");     
+	//myPrintf(GREY,"StartShell:\n");     
 
 	while (1)
 	{
 		myPrintf(BLUE, "Input a command >:");
 		getCmdline(&cmdline[0], 100);
-		myPrintf(0x7, cmdline);
+		myPrintf(GREY, cmdline);
 
 		argc = split2Words(cmdline, &argv[0], 10);
 		if (argc == 0) continue;
