@@ -1,6 +1,7 @@
 /* init.c */
 #include "../myOS/userInterface.h"
 #include "shell.h"
+#include "../myOS/include/kmalloc.h"
 
 int testCase1(int argc, unsigned char **argv){  
 	//======for malloc===============================
@@ -52,6 +53,34 @@ int testCase2(int argc, unsigned char **argv){
 
 	free((unsigned long)buf1);
 	free((unsigned long)buf2);
+
+	return 0;
+}
+
+int testCase3(int argc, unsigned char** argv)
+{
+	//======for malloc===============================
+	char* buf1 = (char*)kmalloc(19);
+	char* buf2 = (char*)kmalloc(24);
+
+	for (int i = 0; i < 17; i++)* (buf1 + i) = '*';
+	*(buf1 + 17) = '\n';
+	*(buf1 + 18) = '\000';
+
+	for (int i = 0; i < 22; i++)* (buf2 + i) = '#';
+	*(buf2 + 22) = '\n';
+	*(buf2 + 23) = '\000';
+
+	myPrintf(PURPLE, "We kallocated 2 buffers.\n");
+	myPrintf(PURPLE, "BUF1(size=19, addr=0x%x) filled with 17(*): ", (unsigned long)buf1);
+	myPrintf(GREY, buf1);
+	myPrintf(PURPLE, "BUF2(size=24, addr=0x%x) filled with 22(#): ", (unsigned long)buf2);
+	myPrintf(GREY, buf2);
+
+	myPrintf(GREY, "\n");
+
+	kfree((unsigned long)buf1);
+	kfree((unsigned long)buf2);
 
 	return 0;
 }
@@ -299,6 +328,7 @@ int testeFP(int argc, unsigned char **argv){
 void memTestCaseInit(void){	
 	addNewCmd("testMalloc1\0", testCase1, NULL, "Malloc, write and read.\0");
 	addNewCmd("testMalloc2\0", testCase2, NULL, "Malloc, write and read.\0");		
+	addNewCmd("testMalloc3\0", testCase3, NULL, "Kmalloc, write and read.\0");
 	addNewCmd("maxMallocSizeNow\0", maxMallocSizeNow, NULL, "MAX_MALLOC_SIZE always changes. What's the value Now?\0");
 
 	addNewCmd("testdP1\0", testdP1, NULL, "Init a dPatition(size=0x100). [Alloc,Free]* with step = 0x20\0");

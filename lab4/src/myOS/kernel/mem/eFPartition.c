@@ -102,6 +102,7 @@ unsigned long eFPartitionFree(unsigned long EFPHandler, unsigned long mbStart)
 {
 	EFPHandler -= eFPartitionsize;
 	mbStart -= EEBsize;
+	//查找指定块
 	unsigned long p = ((eFPartition*)EFPHandler)->firstEEB;
 	EEB* eebpoint;
 	while (p != 0)
@@ -110,7 +111,6 @@ unsigned long eFPartitionFree(unsigned long EFPHandler, unsigned long mbStart)
 		eebpoint = (EEB*)p;
 		if (p == mbStart)
 		{	
-			//free掉mbstart之前的内存
 			eebpoint->isfree = 1;
 			return 1;
 		}

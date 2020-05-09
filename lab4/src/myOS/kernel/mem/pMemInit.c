@@ -30,6 +30,7 @@ void memTest(unsigned long start, unsigned long grainSize)
 		{
 			break;
 		}
+		//写回
 		*((unsigned short*)addr) = a;
 		//检测后两字节
 		addr += grainSize - 2;	

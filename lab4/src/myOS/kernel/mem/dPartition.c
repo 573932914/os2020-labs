@@ -1,6 +1,6 @@
 #include "../../include/myPrintk.h"
 #define asign_byte (4)                                      //对齐字节
-#define dPartitionsize (sizeof(dPartition))               //内存结构体大小
+#define dPartitionsize (sizeof(dPartition))                 //内存结构体大小
 #define EMBsize (sizeof(EMB))                               //块结构体大小
 
 //整个动态分区内存的数据结构
@@ -21,8 +21,8 @@ typedef struct
 	unsigned long size;
 	union
 	{
-		unsigned long nextStart;    // if free: pointer to next block
-		unsigned long userData;        // if allocated, blongs to user
+		unsigned long nextStart;
+		unsigned long userData;
 	};
 	int isfree;
 }EMB;
@@ -38,6 +38,7 @@ unsigned long dPartitionInit(unsigned long start, unsigned long totalSize)
 	//判断大小
 	if (totalSize <= dPartitionsize + EMBsize)
 		return 0;
+	//打印内存相关结构体的大小信息
 	myPrintk(DARK_GREEN, "The size of dPartitionpoint is 0x%x bytes, the size of EMB is 0x%x bytes\n", dPartitionsize, EMBsize);
 	//创建一个dPartition结构体 
 	dPartition* dPartitionpoint = (dPartition*)start;
@@ -56,7 +57,7 @@ void dPartitionWalkByAddr(unsigned long dp)
 	dp -= dPartitionsize;
 	//打印内存整体信息
 	showdPartition((dPartition*)dp);
-	//打印块信息
+	//遍历打印块信息
 	unsigned long p = ((dPartition*)dp)->EMBStart;
 	EMB* embpoint;
 	while (p != 0)
@@ -141,6 +142,7 @@ unsigned long dPartitionFreeFirstFit(unsigned long dp, unsigned long start)
 			}
 			return 1;
 		}
+		//若当前块空闲则记录大小
 		if (embpoint->isfree == 1)
 			lastEMBsize = embpoint->size;
 		else
