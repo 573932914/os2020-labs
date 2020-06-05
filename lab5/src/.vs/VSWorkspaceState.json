@@ -2,12 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\myOS",
+    "\\myOS\\i386",
     "\\myOS\\include",
     "\\myOS\\kernel",
     "\\myOS\\kernel\\mem",
     "\\myOS\\lib",
+    "\\myOS\\printk",
     "\\userApp"
   ],
-  "SelectedNode": "\\myOS\\include\\color.h",
+  "SelectedNode": "\\userApp\\shell.c",
   "PreviewInSolutionExplorer": false
 }
