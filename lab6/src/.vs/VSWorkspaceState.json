@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\myOS",
+    "\\myOS\\include",
+    "\\myOS\\kernel",
+    "\\myOS\\printk",
+    "\\tests",
+    "\\tests\\test0_fcfs",
+    "\\userApp"
+  ],
+  "SelectedNode": "\\myOS\\include\\tcb.h",
+  "PreviewInSolutionExplorer": false
+}
