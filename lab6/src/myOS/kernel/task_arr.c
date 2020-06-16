@@ -7,7 +7,6 @@
 task按照arrTime从小到大排列
 */
 
-
 /* for task arriving */
 typedef struct myTCB myTCB;
 extern void tskStart(myTCB* tsk);

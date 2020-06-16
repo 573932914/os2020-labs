@@ -28,37 +28,94 @@ void doSomeTestBefore(void)
 
 void myTSK0(void)
 {
+#if(SCHED_INSTANCE == SCHEDULER_FCFS)    //FCFS
 	int j = 1;
-	while (j <= 10)
+	while (j <= 4)
 	{
 		myPrintf(0x7, "myTSK0::%d    \n", j);
 		busy_n_ms(120);
 		j++;
 	}
+#elif(SCHED_INSTANCE == SCHEDULER_SJF)    //SJF
+	int j = 1;
+	while (j <= 4)
+	{
+		myPrintf(0x7, "myTSK0::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#elif(SCHED_INSTANCE == SCHEDULER_PRIORITY)    //PRIO
+	int j = 1;
+	myPrintf(0x7, "priority of myTSK0 : 3\n");
+	while (j <= 4)
+	{
+		myPrintf(0x7, "myTSK0::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#endif 
 	tskEnd();   //the task is end
 }
 
 void myTSK1(void)
 {
+#if(SCHED_INSTANCE == SCHEDULER_FCFS)    //FCFS
 	int j = 1;
-	while (j <= 10)
+	while (j <= 4)
 	{
 		myPrintf(0x7, "myTSK1::%d    \n", j);
 		busy_n_ms(120);
 		j++;
 	}
+#elif(SCHED_INSTANCE == SCHEDULER_SJF)    //SJF
+	int j = 1;
+	while (j <= 8)
+	{
+		myPrintf(0x7, "myTSK1::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#elif(SCHED_INSTANCE == SCHEDULER_PRIORITY)    //PRIO
+	int j = 1;
+	myPrintf(0x7, "priority of myTSK0 : 5\n");
+	while (j <= 4)
+	{
+		myPrintf(0x7, "myTSK1::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#endif 
 	tskEnd();   //the task is end
 }
 
 void myTSK2(void)
 {
+#if(SCHED_INSTANCE == SCHEDULER_FCFS)    //FCFS
 	int j = 1;
-	while (j <= 10)
+	while (j <= 4)
 	{
 		myPrintf(0x7, "myTSK2::%d    \n", j);
 		busy_n_ms(120);
 		j++;
 	}
+#elif(SCHED_INSTANCE == SCHEDULER_SJF)    //SJF
+	int j = 1;
+	while (j <= 6)
+	{
+		myPrintf(0x7, "myTSK2::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#elif(SCHED_INSTANCE == SCHEDULER_PRIORITY)    //PRIO
+	int j = 1;
+	myPrintf(0x7, "priority of myTSK0 : 4\n");
+	while (j <= 4)
+	{
+		myPrintf(0x7, "myTSK2::%d    \n", j);
+		busy_n_ms(120);
+		j++;
+	}
+#endif 
 	tskEnd();   //the task is end
 }
 
@@ -82,7 +139,7 @@ void testScheduler(void)
 	setTskPara(ARRTIME, 0, &tskParas[0]);
 	createTsk(myTSK0, &tskParas[0]);
 	setTskPara(EXETIME, 200, &tskParas[1]);
-	setTskPara(ARRTIME, 100, &tskParas[1]);
+	setTskPara(ARRTIME, 0, &tskParas[1]);
 	createTsk(myTSK1, &tskParas[1]);
 	setTskPara(EXETIME, 150, &tskParas[2]);
 	setTskPara(ARRTIME, 0, &tskParas[2]);
@@ -98,7 +155,7 @@ void testScheduler(void)
 	setTskPara(ARRTIME, 0, &tskParas[2]);
 	createTsk(myTSK2, &tskParas[2]);
 #elif    //ELSE
-
+	return;
 #endif 
 	initShell();
 	memTestCaseInit();
