@@ -9,6 +9,6 @@
     "\\tests\\test0_fcfs",
     "\\userApp"
   ],
-  "SelectedNode": "\\userApp\\main.c",
+  "SelectedNode": "\\myOS\\kernel\\task_sched.c",
   "PreviewInSolutionExplorer": false
 }
